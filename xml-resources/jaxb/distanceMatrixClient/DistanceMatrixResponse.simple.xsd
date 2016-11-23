@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="DistanceMatrixResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="status"/>
+        <xs:element maxOccurs="1" ref="origin_address"/>
+        <xs:element maxOccurs="1" ref="destination_address"/>
+        <xs:element maxOccurs="1" ref="row"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="origin_address" type="xs:string"/>
+  <xs:element name="destination_address" type="xs:string"/>
+  <xs:element name="row">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" ref="element"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="element">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="status"/>
+        <xs:element ref="duration"/>
+        <xs:element ref="distance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="duration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="value"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="value"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="status" type="xs:string"/>
+  <xs:element name="value" type="xs:integer"/>
+  <xs:element name="text" type="xs:string"/>
+</xs:schema>
